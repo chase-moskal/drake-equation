@@ -31,7 +31,8 @@ main {
 .textbox {
 	@include contentSpacing();
 	max-width: 600px;
-	margin: 2em auto;
+	margin: auto;
+	padding: 2em 0.5em;
 
 	h1 {
 		text-transform: uppercase;
