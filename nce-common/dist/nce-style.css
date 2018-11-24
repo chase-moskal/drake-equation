@@ -1,0 +1,181 @@
+.nce-common, .nce-common * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nce-common:focus, .nce-common *:focus {
+  outline: 4px solid #00ffaa;
+  outline-offset: -2px;
+}
+.nce-common, .nce-common body {
+  height: 100%;
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  background: #cdf1ef;
+  color: #2fa69f;
+}
+.nce-common .cart-area .cart-button {
+  margin-left: 0.2em;
+}
+.nce-common .cart-area .cart-button, .nce-common .cart-area .cart-panel, .nce-common .cart-area .checkout-button {
+  border-radius: 8px;
+}
+.nce-common .cart-area .cart-system {
+  transition: none;
+}
+.nce-common .nce-header {
+  margin: auto;
+  width: 85%;
+  max-width: 1600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  flex-direction: row;
+  padding-right: 1.5em;
+  padding-top: 1.8em;
+  background: #38c6bd;
+  color: white;
+}
+@media (max-width: 900px) {
+  .nce-common .nce-header {
+    width: 100%;
+  }
+}
+@media (min-width: 1600px) {
+  .nce-common .nce-header {
+    width: 77.5%;
+  }
+}
+.nce-common .nce-header > * {
+  flex: 1 1 auto;
+}
+@media (max-width: 600px) {
+  .nce-common .nce-header {
+    flex-direction: column;
+  }
+}
+.nce-common .nce-header h1 {
+  font-size: 1em;
+  padding: 1em 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.1em;
+  cursor: default;
+}
+.nce-common .nce-header nav {
+  text-align: right;
+}
+.nce-common .nce-header nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1em 0.5em;
+  text-transform: none;
+}
+.nce-common .nce-header nav a:hover, .nce-common .nce-header nav a:focus {
+  text-decoration: underline;
+}
+.nce-common .nce-header nav a:active {
+  opacity: 0.9;
+}
+.nce-common .nce-header nav a[data-marked=true] {
+  text-decoration: underline;
+}
+.nce-common .nce-header nav a:hover, .nce-common .nce-header nav a:focus {
+  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+.nce-common .nce-header nav a[data-marked=true] {
+  background: transparent !important;
+}
+.nce-common .nce-footer {
+  margin: auto;
+  width: 85%;
+  max-width: 1600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 2em;
+  background: #38c6bd;
+  color: white;
+}
+@media (max-width: 900px) {
+  .nce-common .nce-footer {
+    width: 100%;
+  }
+}
+@media (min-width: 1600px) {
+  .nce-common .nce-footer {
+    width: 77.5%;
+  }
+}
+.nce-common .nce-footer > * {
+  flex: 1 1 auto;
+}
+@media (max-width: 600px) {
+  .nce-common .nce-footer {
+    flex-direction: column;
+  }
+}
+.nce-common .nce-footer div {
+  flex: 1 1 auto;
+  text-align: left;
+}
+.nce-common .nce-footer div:last-child {
+  text-align: right;
+  align-self: flex-end;
+}
+.nce-common .nce-footer strong {
+  text-transform: none;
+}
+.nce-common .nce-footer small {
+  opacity: 0.7;
+  font-size: 0.7em;
+}
+.nce-common .nce-footer a {
+  color: #8cffcd;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nce-common .nce-footer a:hover, .nce-common .nce-footer a:focus {
+  text-decoration: underline;
+}
+.nce-common .nce-footer a:active {
+  opacity: 0.9;
+}
+.nce-common .nce-footer a[data-marked=true] {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .nce-common .nce-footer div:first-child {
+    margin-bottom: 2em;
+  }
+}
+
+.nce-common-demo main {
+  margin: auto;
+  width: 85%;
+  max-width: 1600px;
+  text-align: center;
+  min-height: 100%;
+}
+@media (max-width: 900px) {
+  .nce-common-demo main {
+    width: 100%;
+  }
+}
+@media (min-width: 1600px) {
+  .nce-common-demo main {
+    width: 77.5%;
+  }
+}
+.nce-common-demo main section {
+  padding: 1em 2em;
+}
+
+/*# sourceMappingURL=nce-style.css.map */

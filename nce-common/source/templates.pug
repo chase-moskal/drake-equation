@@ -1,0 +1,47 @@
+
+mixin nceMetaStuff()
+	meta(charset='utf-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1')
+
+mixin nceGoogleAnalytics()
+	//- Global site tag (gtag.js) - Google Analytics
+	script(async src='https://www.googletagmanager.com/gtag/js?id=UA-88692339-3')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-88692339-3');
+
+- var nceHeaderLinks = []
+- nceHeaderLinks.push({label: "Home", url: "https://nailcareer.com"})
+//- - nceHeaderLinks.push({label: "Store", url: "https://store.nailcareer.com"})
+- nceHeaderLinks.push({label: "Magazine", url: "https://magazine.nailcareer.com"})
+- nceHeaderLinks.push({label: "Workshop", url: "https://workshop.nailcareer.com"})
+- nceHeaderLinks.push({label: "Videos", url: "https://videos.nailcareer.com"})
+
+mixin nceHeader(marked)
+	header.nce-header
+		h1 Nail Career Education
+		nav.nce-nav
+			each link in nceHeaderLinks
+				if link.label.toLowerCase() === marked.toLowerCase()
+					a(href=link.url data-marked="true")= link.label
+				else
+					a(href=link.url data-marked="false")= link.label
+
+- var nceFooterLinks = []
+- nceFooterLinks.push({label: "Privacy Policy", url: "https://nailcareer.com/legal/privacy-policy"})
+- nceFooterLinks.push({label: "Refund Policy", url: "https://nailcareer.com/legal/refund-policy"})
+- nceFooterLinks.push({label: "Terms of Service", url: "https://nailcareer.com/legal/terms-of-service"})
+
+mixin nceFooter()
+	footer.nce-footer
+		div
+			block
+		div
+			p
+				strong Suzie's Nail Career Education Inc
+			each link in nceFooterLinks
+				p
+					small
+						a(href=link.url)= link.label

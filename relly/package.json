@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      "relly@0.0.1",
+      "/home/brim/Desktop/work/drake"
+    ]
+  ],
+  "_from": "relly@0.0.1",
+  "_id": "relly@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-Xu452SD7+Wgfb2eScfpBMou9gBEFnOhc1uXwLz8rd2JQ9yHL440d1UKHGoIbbR8Y4LWWca/kw2vhtkigIUCtVg==",
+  "_location": "/relly",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "relly@0.0.1",
+    "name": "relly",
+    "escapedName": "relly",
+    "rawSpec": "0.0.1",
+    "saveSpec": null,
+    "fetchSpec": "0.0.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/relly/-/relly-0.0.1.tgz",
+  "_spec": "0.0.1",
+  "_where": "/home/brim/Desktop/work/drake",
+  "author": {
+    "name": "Chase Moskal",
+    "email": "chasemoskal@gmail.com"
+  },
+  "description": "toolkit for relative div and font sizing",
+  "devDependencies": {
+    "browserify": "16.1.1",
+    "envify": "4.1.0",
+    "http-server": "0.11.1",
+    "mkdirp": "0.5.1",
+    "node-sass": "4.8.3",
+    "npm-run-all": "4.1.2",
+    "rimraf": "2.6.2",
+    "tsify": "3.0.4",
+    "typescript": "2.8.1",
+    "uglify-es": "3.3.9",
+    "uglifyify": "4.0.5"
+  },
+  "files": [
+    "source",
+    "dist"
+  ],
+  "keywords": [
+    "relative",
+    "aspect-ratio",
+    "font-size"
+  ],
+  "license": "ISC",
+  "main": "dist/relly",
+  "name": "relly",
+  "scripts": {
+    "build": "npm run clean -s && run-p build-scripts build-styles && echo ✔ done production build",
+    "build-debug": "npm run clean -s && run-p build-scripts-debug && echo ✔ done debug build",
+    "build-scripts": "tsc && browserify source/relly.global.ts -p [ tsify ] -g [ envify --NODE_ENV production ] -g uglifyify > dist/relly.global.bundle.unoptimized.js && uglifyjs -cm < dist/relly.global.bundle.unoptimized.js > dist/relly.global.bundle.js",
+    "build-scripts-debug": "tsc && browserify source/relly.global.ts --debug -p [ tsify ] > dist/relly.global.bundle.js",
+    "build-styles": "node-sass --source-map true source/relly.scss dist/relly.css",
+    "clean": "rimraf dist && mkdirp dist",
+    "prepare": "npm run build -s && npm test -s",
+    "start": "http-server",
+    "test": "exit 0",
+    "watch-styles": "npm run build-styles -s -- --watch"
+  },
+  "types": "dist/relly.d.ts",
+  "version": "0.0.1"
+}

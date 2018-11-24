@@ -1,0 +1,149 @@
+
+@charset "utf-8";
+
+$nce-wavyblue: #38c6bd;
+$nce-heavyblue: darken($nce-wavyblue, 8%);
+$nce-azureblue: mix($nce-wavyblue, white, 25%);
+$nce-bluegreen: #00ffaa;
+
+@mixin nce-slice($width: 1600px, $margin: 15%, $responsive: true) {
+	margin: auto;
+	width: 100% - $margin;
+	max-width: $width;
+
+	@if ($responsive) {
+		@media (max-width: 900px) { width: 100%; }
+		@media (min-width: 1600px) { width: 100% - ($margin * 1.5); }
+	}
+}
+
+@mixin nce-content-spacing() {
+	* + p,
+	* + div,
+	* + ul,
+	* + ol,
+	* + h1,
+	* + h2,
+	* + h3,
+	* + h4,
+	* + h5,
+	* + h6 {
+		margin-top: 0.8em;
+	}
+}
+
+@mixin nce-banner($padding: 0 2em) {
+	@include nce-slice();
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $padding;
+	flex-direction: row;
+
+	& > * {
+		flex: 1 1 auto;
+	}
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
+}
+
+@mixin nce-link($color: $nce-bluegreen) {
+	color: $color;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		text-decoration: underline;
+	}
+
+	&:active {
+		opacity: 0.9;
+	}
+
+	&[data-marked="true"] {
+		text-decoration: underline;
+	}
+}
+
+@mixin nce-header($bg: $nce-wavyblue, $color: white, $linkcolor: white) {
+	@include nce-banner();
+	padding-right: 1.5em;
+	padding-top: 1.8em;
+
+	background: $bg;
+	color: $color;
+
+	h1 {
+		font-size: 1em;
+		padding: 1em 0;
+		text-transform: uppercase;
+		text-shadow: 0 0 10px transparentize($color, 0.2);
+		letter-spacing: 0.1em;
+		cursor: default;
+	}
+
+	nav {
+		text-align: right;
+
+		a {
+			@include nce-link($linkcolor);
+			display: inline-block;
+			padding: 1em 0.5em;
+			text-transform: none;
+
+			&:hover, &:focus {
+				background: rgba(255,255,255, 0.2);
+				background: linear-gradient(
+					to top,
+					rgba(255,255,255, 0.2),
+					rgba(255,255,255, 0)
+				);
+			}
+
+			&[data-marked="true"] {
+				background: transparent !important;
+			}
+		}
+	}
+}
+
+@mixin nce-footer($bg: $nce-wavyblue, $color: white, $linkcolor: #8cffcd) {
+	@include nce-banner($padding: 1em 2em);
+	display: flex;
+	align-items: flex-start;
+	padding-bottom: 2em;
+
+	background: $bg;
+	color: $color;
+
+	div {
+		flex: 1 1 auto;
+		text-align: left;
+	}
+
+	div:last-child {
+		text-align: right;
+		align-self: flex-end;
+	}
+
+	strong {
+		text-transform: none;
+	}
+
+	small {
+		opacity: 0.7;
+		font-size: 0.7em;
+	}
+
+	a {
+		@include nce-link($linkcolor);
+		font-weight: bold;
+	}
+
+	@media (max-width: 600px) {
+		div:first-child {
+			margin-bottom: 2em;
+		}
+	}
+}

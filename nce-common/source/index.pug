@@ -1,0 +1,23 @@
+
+include templates
+
+doctype html
+html.nce-common.nce-common-demo.shopper.shopper-theme-basic
+	head
+		+nceMetaStuff()
+		title NCE Common
+		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato|Quicksand')
+		link(rel='stylesheet' href='node_modules/shopper/dist/shopper.css')
+		link(rel='stylesheet' href='nce-style.css')
+		link(rel='icon' href='assets/favicon.ico')
+	+nceHeader('Home')
+	main
+		.cart-area
+		section
+			h1 NCE Common
+			p testing grounds
+		section
+			.products-area.kits
+			.products-area.tickets
+	+nceFooter()
+	script(src='demo.bundle.js')

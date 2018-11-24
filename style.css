@@ -1,0 +1,174 @@
+.relly-aspectbox-4-3::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 75%;
+}
+.relly-aspectbox-4-3::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.relly-aspectbox-16-9::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 56.25%;
+}
+.relly-aspectbox-16-9::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.relly-aspectbox-2-1::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 50%;
+}
+.relly-aspectbox-2-1::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.relly-aspectbox-5-2::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 40%;
+}
+.relly-aspectbox-5-2::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.relly-aspectbox-3-1::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 33.3333333333%;
+}
+.relly-aspectbox-3-1::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 22px;
+  height: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+main {
+  width: 95%;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.textbox {
+  max-width: 600px;
+  margin: auto;
+  padding: 2em 0.5em;
+}
+.textbox > * + * {
+  margin-top: 0.66em;
+}
+.textbox h1 {
+  text-transform: uppercase;
+}
+.textbox p {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.8);
+}
+.textbox .credit {
+  color: #3a75bb;
+}
+.textbox a {
+  color: #0050b1;
+  text-decoration: none;
+}
+.textbox a:hover {
+  text-decoration: underline;
+}
+
+.equation {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+.equation .equation-term {
+  flex: 1 1 8em;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+.equation .term-name {
+  font-size: 2em;
+  min-height: 1.5em;
+  font-weight: bold;
+}
+.equation .term-definition {
+  font-size: 0.6em;
+  padding: 1em 0.2em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.equation .term-interactive {
+  width: 100%;
+  min-height: 1.5em;
+  order: -1;
+}
+.equation .term-interactive input, .equation .term-interactive output {
+  width: 100%;
+  text-align: center;
+  font-size: inherit;
+  background: transparent;
+  border: none;
+}
+.equation .term-interactive input {
+  color: lime;
+}
+.equation .term-interactive output {
+  color: yellow;
+}
+.equation .term-interactive [data-zero] {
+  color: red;
+}
+@media (max-width: 800px) {
+  .equation {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 600px) {
+  .equation {
+    font-size: 0.6em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

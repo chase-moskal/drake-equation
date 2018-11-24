@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      "nce-common@0.2.5",
+      "/home/brim/Desktop/work/drake"
+    ]
+  ],
+  "_from": "nce-common@0.2.5",
+  "_id": "nce-common@0.2.5",
+  "_inBundle": false,
+  "_integrity": "sha512-L8IUT3xBOd+xY8x2/CCX8b4p2qf1XkCH/2Kzl6QN+Pr5dKNlsEd8clvwH4+cvW0jDphbfCSRx7JDbFtWy1QdiQ==",
+  "_location": "/nce-common",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "nce-common@0.2.5",
+    "name": "nce-common",
+    "escapedName": "nce-common",
+    "rawSpec": "0.2.5",
+    "saveSpec": null,
+    "fetchSpec": "0.2.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nce-common/-/nce-common-0.2.5.tgz",
+  "_spec": "0.2.5",
+  "_where": "/home/brim/Desktop/work/drake",
+  "author": {
+    "name": "Chase Moskal",
+    "email": "chasemoskal@gmail.com"
+  },
+  "dependencies": {
+    "crnc": "0.0.0-dev.12",
+    "omnistorage": "0.0.0-dev.9",
+    "shopper": "0.0.0"
+  },
+  "description": "nce common web assets and tooling",
+  "devDependencies": {
+    "array.find": "1.0.7",
+    "axx": "0.2.0",
+    "browserify": "16.2.2",
+    "commander": "2.17.1",
+    "envify": "4.1.0",
+    "es6-promise": "4.2.4",
+    "http-server": "0.11.1",
+    "mkdirp": "0.5.1",
+    "mobx": "5.1.0",
+    "mobx-preact": "3.0.0",
+    "npm-run-all": "4.1.3",
+    "preact": "8.3.1",
+    "pug-cli": "1.0.0-alpha6",
+    "rimraf": "2.6.2",
+    "sass": "1.13.0",
+    "tsify": "4.0.0",
+    "typescript": "3.0.1",
+    "uglify-es": "3.3.9",
+    "uglifyify": "5.0.1",
+    "whatwg-fetch": "2.0.4"
+  },
+  "files": [
+    "dist",
+    "source",
+    "assets",
+    "index.html"
+  ],
+  "license": "UNLICENSED",
+  "main": "dist",
+  "name": "nce-common",
+  "peerDependencies": {
+    "mobx": "5.x",
+    "mobx-preact": "3.x",
+    "preact": "8.x"
+  },
+  "scripts": {
+    "prepare": "node ./build",
+    "start": "http-server dist",
+    "test": "exit 0"
+  },
+  "version": "0.2.5"
+}

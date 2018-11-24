@@ -1,0 +1,31 @@
+
+@charset "utf-8";
+
+@mixin relly-aspectfrac($fraction: 9 / 16) {
+	$ratio: percentage($fraction);
+
+	&::before {
+		content: "";
+		width: 1px;
+		margin-left: -1px;
+		float: left;
+		height: 0;
+		padding-top: $ratio;
+	}
+
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin relly-aspectbox($x: 16, $y: 9) {
+	@include relly-aspectfrac($y / $x);
+}
+
+.relly-aspectbox-4-3 { @include relly-aspectbox(4, 3); }
+.relly-aspectbox-16-9 { @include relly-aspectbox(16, 9); }
+.relly-aspectbox-2-1 { @include relly-aspectbox(2, 1); }
+.relly-aspectbox-5-2 { @include relly-aspectbox(5, 2); }
+.relly-aspectbox-3-1 { @include relly-aspectbox(3, 1); }
