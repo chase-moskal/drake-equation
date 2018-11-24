@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "production build",
+			"type": "shell",
+			"command": "npm install --silent"
+		},
+		{
+			"label": "debug build",
+			"type": "shell",
+			"command": "time npm run build:debug --silent",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

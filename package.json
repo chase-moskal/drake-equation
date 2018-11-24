@@ -1,0 +1,55 @@
+{
+	"name": "drake-equation-website",
+	"version": "0.0.0-dev.0",
+	"description": "website to demonstrate the drake equation",
+	"author": "Chase Moskal <chasemoskal@gmail.com>",
+	"license": "ISC",
+	"private": true,
+	"main": "dist/main",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepare": "npm run build -s && npm test -s",
+		"clean": "rimraf dist && mkdirp dist",
+		"build": "run-s clean && run-p build:copy build:pages build:scripts build:styles && echo ✔ done production build",
+		"build:debug": "run-s clean && run-p build:copy build:pages-debug build:scripts-debug build:styles && echo ✔ done debug build",
+		"build:copy": "cp .nojekyll dist && cp CNAME dist && cp -R assets dist/assets && cp -R node_modules/nce-common dist/nce-common && cp -R node_modules/relly dist/relly",
+		"build:pages": "pug --no-debug source -o dist",
+		"build:pages-debug": "pug --pretty source -o dist",
+		"build:scripts": "browserify source/main.tsx -p [ tsify ] -g [ envify --NODE_ENV production ] -t uglifyify > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
+		"build:scripts-debug": "browserify source/main.tsx --debug -p [ tsify ] > dist/main.bundle.js",
+		"build:styles": "sass --source-map source/style.scss dist/style.css",
+		"watch": "run-p watch:pages watch:styles",
+		"watch:pages": "pug --watch --pretty source -o dist",
+		"watch:styles": "npm run build:styles -s -- --watch",
+		"test": "exit 0",
+		"deploy": "./deploy.sh gh-pages",
+		"start": "http-server ./dist"
+	},
+	"devDependencies": {
+		"array.find": "1.0.7",
+		"axx": "0.2.0",
+		"browserify": "16.2.2",
+		"envify": "4.1.0",
+		"es6-promise": "4.2.4",
+		"http-server": "0.11.1",
+		"jstransformer-markdown-it": "2.1.0",
+		"mkdirp": "0.5.1",
+		"npm-run-all": "4.1.3",
+		"pug-cli": "1.0.0-alpha6",
+		"rimraf": "2.6.2",
+		"sass": "1.13.0",
+		"tsify": "4.0.0",
+		"typescript": "3.0.1",
+		"uglify-es": "3.3.9",
+		"uglifyify": "5.0.1"
+	},
+	"dependencies": {
+		"mobx": "5.1.0",
+		"mobx-preact": "3.0.0",
+		"nce-common": "0.2.5",
+		"preact": "8.3.1",
+		"relly": "0.0.1"
+	}
+}
